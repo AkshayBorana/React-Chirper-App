@@ -14,14 +14,15 @@ function AddTweet (tweet) {
 }
 
 // Thunk Action Creator for Adding Tweet...
-export function handleAddTweet(text, authedUser) {
+export function handleAddTweet(text, replyingTo) {
     return (dispatch, getState) => {
         const { authedUser } = getState();
         dispatch(showLoading());
 
         return saveTweet({
             text,
-            authedUser
+            author: authedUser,
+            replyingTo
         })
           .then((tweet) => dispatch(AddTweet(tweet)))
           .then(() => dispatch(hideLoading()))
