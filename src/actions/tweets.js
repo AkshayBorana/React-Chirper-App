@@ -20,7 +20,7 @@ function toggleTweet ({ authedUser, hasLiked, id }) {
     }
 }
 
-// Acync ActionCreator for tweet like.
+// Acync Thunk Action Creator for tweet like.
 export function handleToggleTweet(tweetInfo) {
     return (dispatch) => {
         // optimistic updating to update the store...
