@@ -26,6 +26,7 @@ class Tweet extends Component {
 
         if(tweet === null) return (<p>This tweet doesn't exists.</p>)
         const { name, avatar, timestamp, text, hasLiked, likes, replies, parent } = tweet;
+        console.log(avatar)
 
         return (
             <div className="tweet">
